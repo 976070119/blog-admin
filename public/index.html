@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="shortcut icon" href="#" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">
+  <title>blog</title>
+  <style>
+    .aplayer-lrc-contents {
+      margin-top: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+
+  <div id="root"></div>
+  <div id="aplayer"></div>
+  <script>
+    window.onload = function () {
+      loadJS('https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.js', function () {
+        const ap = new window.APlayer({
+          container: document.getElementById('aplayer'),
+          mini: true,
+          autoplay: true,
+          theme: '#FADFA3',
+          loop: 'all',
+          order: 'random',
+          preload: 'auto',
+          volume: 0.7,
+          mutex: true,
+          fixed: true,
+          listFolded: false,
+          listMaxHeight: 90,
+          lrcType: 3,
+          storageName: 'aplayer-setting',
+          audio: [
+            {
+              name: '三个人的晚餐',
+              artist: '王若琳',
+              url: 'https://music.163.com/song/media/outer/url?id=33894312.mp3',
+              cover: 'http://p4.music.126.net/wAvTphtdoH3hUpTpw5CebA==/18337654928625343.jpg',
+              lrc: 'http://47.100.39.25:3000/lyric?id=33894312',
+              theme: '#ebd0c2'
+            },
+            {
+              name: 'Winter Without You',
+              artist: 'Gloria Kim',
+              url: 'https://music.163.com/song/media/outer/url?id=1352962983.mp3',
+              cover: 'http://p4.music.126.net/egJvDzDxh8YpvsLQ31gjkg==/109951163938237058.jpg',
+              lrc: 'http://47.100.39.25:3000/lyric?id=1352962983',
+              theme: '#64d0c2'
+            },
+            {
+              name: 'Sweet but Psycho',
+              artist: 'Ava Max',
+              url: 'https://music.163.com/song/media/outer/url?id=1300528275.mp3',
+              cover: 'http://p3.music.126.net/gee-5oSaBNjcg3fhcBJdBQ==/109951163781396587.jpg',
+              lrc: 'http://47.100.39.25:3000/lyric?id=1300528275',
+              theme: '#cfd0c2'
+            },
+            {
+              name: 'Sweet Little Lies',
+              artist: '王若琳',
+              url: 'https://music.163.com/song/media/outer/url?id=1347650968.mp3',
+              cover: 'http://p3.music.126.net/lsJKDqZkQB806mGFkdmZrw==/109951163909310571.jpg',
+              lrc: 'http://47.100.39.25:3000/lyric?id=1347650968',
+              theme: '#a6d0c2'
+            }
+          ]
+        });
+      });
+    }
+
+    function loadJS(url, callback) {
+      var script = document.createElement('script'),
+        fn = callback || function () { };
+      script.type = 'text/javascript';
+      //IE
+      if (script.readyState) {
+        script.onreadystatechange = function () {
+          if (script.readyState == 'loaded' || script.readyState == 'complete') {
+            script.onreadystatechange = null;
+            fn();
+          }
+        };
+      } else {
+        //其他浏览器
+        script.onload = function () {
+          fn();
+        };
+      }
+      script.src = url;
+      document.getElementsByTagName('head')[0].appendChild(script);
+    }
+  </script>
+</body>
+
+</html>
