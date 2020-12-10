@@ -7,9 +7,9 @@ import store from './redux/store';
 import MyRouter from './router/myRouter';
 import Main from './pages/main/main';
 import Login from './pages/login/login';
-import { reqAddVisits } from './api/api';
+// import { reqAddVisits } from './api/api';
 
-reqAddVisits();
+// reqAddVisits();
 
 ReactDOM.render(
   <Provider store={store}>

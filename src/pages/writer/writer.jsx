@@ -3,10 +3,14 @@ import SimpleMDE from "react-simplemde-editor";
 import { Input, Space, Button, Tag } from 'antd';
 import { TweenOneGroup } from 'rc-tween-one';
 import { PlusOutlined } from '@ant-design/icons';
+import marked from 'marked';
+import { connect } from 'react-redux';
+import { publish } from '../../redux/actions';
 import "easymde/dist/easymde.min.css";
 import './writer.less';
+// import 'github-markdown-css/github-markdown.css'
 
-export default function Writer() {
+function Writer(props) {
     const [title, setTitle] = useState('');
     const [desc, setDesc] = useState('');
     const [tags, setTags] = useState([]);
@@ -26,14 +30,13 @@ export default function Writer() {
     const getDesc = value => setDesc(value.target.value);
     
     const getContent = value => {
-        console.log(value)
         setContent(value);
     }
-    const getInsance = instance => {
-        console.log(instance)
-        instance.togglePreview()
+    // const getInsance = instance => {
+    //     console.log(instance)
+    //     instance.togglePreview()
         // setContent(value);
-    }
+    // }
 
     const handleClose = removedTag => {
         const tag = tags.filter(tag => tag !== removedTag);
@@ -41,8 +44,7 @@ export default function Writer() {
     };
 
     const handleInputChange = e => {
-        setInputValue(e.target.value)
-        console.log(e.target.value)
+        setInputValue(e.target.value);
     };
 
     const handleInputConfirm = () => {
@@ -77,7 +79,13 @@ export default function Writer() {
 
     const publish = () => {
 
-        console.log('title:', title, 'desc:', desc, 'tags:', tags, 'inputValue:', inputValue, 'inputVisible:', inputVisible, 'content:', content)
+        // console.log('title:', title, 'desc:', desc, 'tags:', tags, 'inputValue:', inputValue, 'inputVisible:', inputVisible, 'content:', content);
+        const data = {title, desc, tags, content};
+        props.publish(data);
+        setTitle('');
+        setDesc('');
+        setTags([]);
+        setContent('');
     }
 
     const tagChild = tags.map(forMap);
@@ -85,8 +93,8 @@ export default function Writer() {
     return (
         <div>
             <Space direction="vertical" className='space'>
-                标题：<Input allowClear={true} placeholder="标题" onChange={getTitle} />
-                描述：<Input allowClear={true} placeholder="描述" onChange={getDesc} />
+                标题：<Input allowClear={true} placeholder="标题" onChange={getTitle} value={title}/>
+                描述：<Input allowClear={true} placeholder="描述" onChange={getDesc} value={desc} />
                 标签：
                 <Space>
                     <TweenOneGroup
@@ -125,16 +133,22 @@ export default function Writer() {
                 <Space></Space>
                 <SimpleMDE 
                     onChange={getContent} 
-                    getMdeInstance= { getInsance }
+                    // getMdeInstance= { getInsance }
                     id="your-custom-id"
                     label="内容："
+                    value={content}
                     options={{
                         autosave: {
                           enabled: true,
                         }
                     }} />
-                <Button onClick={publish}>发布</Button>
+                <div className='markdown-body' dangerouslySetInnerHTML={{__html: marked(content)}}></div>
+                <Button style={{display: 'block', margin: '0 auto 50px'}} onClick={publish}>发布</Button>
             </Space>
         </div>
     )
 }
+export default connect(
+    state => ({ data: state.data }),
+    { publish }
+)(Writer)

@@ -7,11 +7,15 @@ import {
   MenuFoldOutlined,
   UserOutlined,
   ContainerOutlined,
-  HomeOutlined
+  HomeOutlined,
+  EditOutlined,
+  CustomerServiceTwoTone,
+  CustomerServiceOutlined
 } from '@ant-design/icons';
 import Index from '../index/index';
 import Writer from '../writer/writer';
 import Article from '../article/article';
+import Music from '../music/music';
 import Setting from '../setting/setting';
 import { getUser } from '../../redux/actions';
 import { connect } from 'react-redux';
@@ -20,11 +24,15 @@ const { Header, Sider, Content } = Layout;
 
 function Main(props) {
 
-  const [index, setIndex] = useState(localStorage.getItem('i'));
+  // const [index, setIndex] = useState(localStorage.getItem('i'));
   const [avatar, setAvatar] = useState('');
   const [nickName, setNickName] = useState('admin');
   const [collapsed, setCollapsed] = useState(false);
   const [marginLeft, setMarginLeft] = useState(200);
+
+  useEffect(() => {
+    props.getUser();
+  }, []);
 
   const toggle = () => {
     setCollapsed(!collapsed);
@@ -32,21 +40,18 @@ function Main(props) {
   }
 
   const menuSelector = (val) => {
-    setIndex(val.key);
-    localStorage.setItem('i', val.key);
+    // setIndex(val.key);
+    // localStorage.setItem('i', val.key);
   }
 
   useEffect(() => {
-    props.getUser();
-  }, []);
-
-  useEffect(() => {
     if (props.user.data) {
-      window.userinfo = props.user.data
+      window.userinfo = props.user.data;
       const { avatar, nickName } = props.user.data;
       setAvatar(avatar);
       setNickName(nickName);
     };
+    // console.log(props, 'main')
   }, [props.user, window.s]);
 
   const hoverEnter = (e) => {
@@ -72,17 +77,20 @@ function Main(props) {
           <Avatar shape="square" onMouseOver={hoverEnter} onMouseOut={hoverLeave} size={84} icon={<UserOutlined />} src={avatar} />
           <span className='username'>{nickName}</span>
         </div>
-        <Menu theme="dark" mode="inline" defaultSelectedKeys={[index]} onClick={menuSelector}>
+        <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']} onClick={menuSelector}>
           <Menu.Item key="1" icon={<HomeOutlined />}>
             <Link to='/index'>主页</Link>
           </Menu.Item>
-          <Menu.Item key="2" icon={<ContainerOutlined />}>
+          <Menu.Item key="2" icon={<EditOutlined />}>
             <Link to='/writer'>发布文章</Link>
           </Menu.Item>
           <Menu.Item key="3" icon={<ContainerOutlined />}>
             <Link to='/article'>文章列表</Link>
           </Menu.Item>
-          <Menu.Item key="4" icon={<UserOutlined />}>
+          <Menu.Item key="4" icon={<CustomerServiceOutlined />}>
+            <Link to='/music'>歌单管理</Link>
+          </Menu.Item>
+          <Menu.Item key="5" icon={<UserOutlined />}>
             <Link to='/setting'>设置</Link>
           </Menu.Item>
         </Menu>
@@ -106,7 +114,9 @@ function Main(props) {
             <Route path='/index' component={Index} />
             <Route path='/writer' component={Writer} />
             <Route path='/article' component={Article} />
+            <Route path='/music' component={Music} />
             <Route path='/setting' component={Setting} />
+            <Route path='/' component={Index} />
           </Switch>
         </Content>
       </Layout>

@@ -22,8 +22,40 @@
   <div id="aplayer"></div>
   <script>
     window.onload = function () {
+      const auduoInfo = [
+            {
+              name: '当真 (完整版)',
+              artist: '野小马',
+              url: 'https://music.163.com/song/media/outer/url?id=1448197936.mp3',
+              cover: 'https://p1.music.126.net/4WQ7kKtDjtb9B-WJk77zzQ==/109951164987803704.jpg?param80y80',
+              lrc: "[00:00.000] 作词 : 蒋家驹↵[00:01.000] 作曲 : 蒋家驹↵[00:31.82]如果谁能记得↵[00:35.45]记得未必深刻↵[00:39.17]深刻地记得那个我↵[00:41.84]快乐不快乐↵[00:46.48]如果谁还不舍↵[00:50.05]未必有舍有得↵[00:53.75]得到了什么别问我↵[00:56.38]吝啬不吝啬↵[01:01.23]别太当真↵[01:02.93]暧昧是感性留的后遗症↵[01:06.32]是追根刨底始终没结论↵[01:10.08]颓废得像尊瘟神↵[01:12.06]伤了自尊就向我注射几针↵[01:15.50]我当了真↵[01:17.21]爱你是惯性慢慢在延伸↵[01:20.83]是路口及时亮起了红灯↵[01:24.58]才显得我多么蠢↵[01:26.46]这种才能只配做个过路人↵[01:30.15]过路人↵[01:48.35]如果谁还不舍↵[01:51.99]未必有舍有得↵[01:55.64]得到了什么别问我↵[01:58.31]吝啬不吝啬↵[02:00.96]别太当真↵[02:02.93]暧昧是感性留的后遗症↵[02:06.42]是追根刨底始终没结论↵[02:10.11]颓废得像尊瘟神↵[02:11.95]伤了自尊就向我注射几针↵[02:15.47]我当了真↵[02:17.39]爱你是惯性慢慢在延伸↵[02:20.94]是路口及时亮起了红灯↵[02:24.61]才显得我多么蠢↵[02:26.85]这种才能只配做个过路人↵[02:30.39]别太当真↵[02:32.02]暧昧是感性留的后遗症↵[02:35.52]是追根刨底始终没结论↵[02:39.24]颓废得像尊瘟神↵[02:41.10]伤了自尊就向我注射几针↵[02:44.71]我当了真↵[02:46.58]爱你是惯性慢慢在延伸↵[02:50.13]是路口及时亮起了红灯↵[02:53.75]才显得我多么蠢↵[02:55.66]这种才能只配做个过路人↵[02:59.31]过路人↵[03:05.73]发行公司：讯飞音乐↵[03:06.27]本作品经词曲作者和版权公司正式授权↵[00:00.000] 作词 : 蒋家驹↵[00:01.000] 作曲 : 蒋家驹↵[00:31.82]如果谁能记得↵[00:35.45]记得未必深刻↵[00:39.17]深刻地记得那个我↵[00:41.84]快乐不快乐↵[00:46.48]如果谁还不舍↵[00:50.05]未必有舍有得↵[00:53.75]得到了什么别问我↵[00:56.38]吝啬不吝啬↵[01:01.23]别太当真↵[01:02.93]暧昧是感性留的后遗症↵[01:06.32]是追根刨底始终没结论↵[01:10.08]颓废得像尊瘟神↵[01:12.06]伤了自尊就向我注射几针↵[01:15.50]我当了真↵[01:17.21]爱你是惯性慢慢在延伸↵[01:20.83]是路口及时亮起了红灯↵[01:24.58]才显得我多么蠢↵[01:26.46]这种才能只配做个过路人↵[01:30.15]过路人↵[01:48.35]如果谁还不舍↵[01:51.99]未必有舍有得↵[01:55.64]得到了什么别问我↵[01:58.31]吝啬不吝啬↵[02:00.96]别太当真↵[02:02.93]暧昧是感性留的后遗症↵[02:06.42]是追根刨底始终没结论↵[02:10.11]颓废得像尊瘟神↵[02:11.95]伤了自尊就向我注射几针↵[02:15.47]我当了真↵[02:17.39]爱你是惯性慢慢在延伸↵[02:20.94]是路口及时亮起了红灯↵[02:24.61]才显得我多么蠢↵[02:26.85]这种才能只配做个过路人↵[02:30.39]别太当真↵[02:32.02]暧昧是感性留的后遗症↵[02:35.52]是追根刨底始终没结论↵[02:39.24]颓废得像尊瘟神↵[02:41.10]伤了自尊就向我注射几针↵[02:44.71]我当了真↵[02:46.58]爱你是惯性慢慢在延伸↵[02:50.13]是路口及时亮起了红灯↵[02:53.75]才显得我多么蠢↵[02:55.66]这种才能只配做个过路人↵[02:59.31]过路人↵[03:05.73]发行公司：讯飞音乐↵[03:06.27]本作品经词曲作者和版权公司正式授权↵",
+              theme: '#64d0c2'
+            },
+            {
+              name: 'Winter Without You',
+              artist: 'Gloria Kim',
+              url: 'https://music.163.com/song/media/outer/url?id=1352962983.mp3',
+              cover: 'http://p4.music.126.net/egJvDzDxh8YpvsLQ31gjkg==/109951163938237058.jpg',
+              lrc: "[00:01.241]Crowded rooms to numb the pain\n[00:04.846]Coke & rum to erase the trace\n[00:08.738]Of every thought you had of her\n[00:16.418]Your friends all ask if you're ok\n[00:20.206]You're dying now but wear a face\n[00:24.150]It's not like you to be out late\n[00:30.341]Hoping to find somebody\n[00:32.823]anybody\n[00:34.730]to better this\n[00:38.596]When she's all you miss\n[00:41.809]Why don't you\n[00:42.619]pick up the phone\n[00:43.925]and you tell her you love her\n[00:46.433]Late like the fall\n[00:47.791]but it's better than never\n[00:50.116]for you\n[00:54.139]you\n[00:57.979]Cuz she's writing sad songs\n[00:59.546]and each one's about you\n[01:01.871]Keeping the memories\n[01:03.517]but trying to forget too\n[01:05.868]oh...\n[01:09.655]oh...\n[01:13.130]This winter's so cold alone\n[01:26.583]Yesterday or years ago\n[01:29.953]When the night\n[01:31.598]leaves you all alone\n[01:33.845]You keep her smile\n[01:35.595]in your wallet\n[01:41.629]And maybe it was what you said\n[01:45.417]Or all the things left in your head\n[01:49.335]You're fighting so hard\n[01:51.347]to love again\n[01:55.553]Hoping to find somebody\n[01:57.851]anybody\n[01:59.811]to better this\n[02:03.572]When she's all you miss\n[02:06.942]Why don't you\n[02:07.935]pick up the phone\n[02:09.188]and you tell her you love her\n[02:11.487]Late like the fall\n[02:12.793]but it's better than never\n[02:15.327]For you\n[02:19.272]you\n[02:23.164]Cuz she's writing sad songs\n[02:24.888]and each one's about you\n[02:26.873]Keeping the memories\n[02:28.754]but trying to forget too\n[02:30.844]oh...\n[02:34.501]oh...\n[02:38.498]This winter's so cold alone\n[02:46.282]This winter's so cold alone\n[by:Meisah--M]\n[00:01.241]拥挤的房间，让疼痛也变得麻木\n[00:04.846]有可乐的和朗姆酒的狂欢\n[00:08.738]可以掩去你对她的所有想法\n[00:16.418]你的朋友们都围在你身边问你是否还好\n[00:20.206]明明醉得半死却还戴着一副面具\n[00:24.150]明明你以前也不是这样醉生梦死，彻夜不归的人\n[00:30.341]希望能有那么一个人吧\n[00:32.823]任何人都可以\n[00:34.730]能让你好起来\n[00:38.596]能让你寄托全部的想念\n[00:41.809]为什么你不勇敢一点\n[00:42.619]直接拿起你的手机\n[00:43.925]告诉她你还爱她\n[00:46.433]就算挽回来得太迟\n[00:47.791]也要好过永留遗憾\n[00:50.116]于你\n[00:54.139]于你们\n[00:57.979]她还在写歌啊\n[00:59.546]每一首，每一首，那么哀伤，都是关于你的\n[01:01.871]关于那些想要深深刻在脑海\n[01:03.517]又想要全部忘却的回忆\n[01:05.868]属于你们的回忆\n[01:09.655]喔...\n[01:13.130]独自一人的冬季，寒风凛冽\n[01:26.583]是在昨天，也是在多年以前\n[01:29.953]黑夜\n[01:31.598]把你一个人留下\n[01:33.845]她微笑的照片\n[01:35.595]被你珍重地放在钱包里\n[01:41.629]也许你说出口了\n[01:45.417]又或许只是停留在了脑海\n[01:49.335]我看到了你在奋力挣扎\n[01:51.347]为了重获爱的感觉\n[01:55.553]你一直在寻找\n[01:57.851]任何人都可以\n[01:59.811]能让你好起来\n[02:03.572]能让你寄托全部的想念\n[02:06.942]为什么你不勇敢一点\n[02:07.935]直接拿起你的手机\n[02:09.188]告诉她你还爱她\n[02:11.487]就算挽回来得太迟\n[02:12.793]也要好过永留遗憾\n[02:15.327]于你\n[02:19.272]于你们\n[02:23.164]她还在写歌啊\n[02:24.888]每一首，每一首，那么哀伤，都是关于你的\n[02:26.873]关于那些想要深深刻在脑海\n[02:28.754]又想要全部忘却的回忆\n[02:30.844]属于你们的回忆\n[02:34.501]喔...\n[02:38.498]独自一人的冬季\n[02:46.282]风雪也变得大了起来啊",
+              theme: '#64d0c2'
+            },
+            {
+              name: 'Sweet Little Lies',
+              artist: 'xxx',
+              url: 'https://music.163.com/song/media/outer/url?id=1347650968.mp3',
+              cover: 'http://p3.music.126.net/lsJKDqZkQB806mGFkdmZrw==/109951163909310571.jpg',
+              lrc: "[00:00.63]Tell me all your sweet, sweet little lies\n[00:03.49]All about the dark places you hide\n[00:06.43]Tell me all your problems, make them mine\n[00:09.41]Tell me all your sweet, sweet little lies\n[00:13.93]I live a picture in my head\n[00:15.92]Colors soaring as i float above my body in my bed yea\n[00:19.59]And I wonder if I’m dead,\n[00:21.98]Saw the white light flicker so I wake up in a sweat\n[00:25.13]Code red, sirens going off bout something that i dreamt,\n[00:28.97]Thinking bout the **** i never told you that i meant\n[00:31.97]I can't shake it off, chloroform peace and rest\n[00:34.97]But you know all I ever really wanted was a friend\n[00:37.99]Tell me all your sweet, sweet little lies\n[00:40.86]All about the dark places you hide\n[00:43.85]Tell me all your problems, make them mine\n[00:46.95]Tell me all your sweet, sweet little lies\n[00:49.93]I wonder if the sun will shine again\n[00:52.71]If I'll ever see your face again\n[00:55.90]You know I'd rather die than say goodbye\n[00:58.91]So tell me all your sweet, sweet little lies\n[01:02.05]Late night fantasy\n[01:02.98]Its when I teleport again\n[01:04.81]I got one spare key\n[01:06.42]We can go and play pretend\n[01:07.83]We can really transcend ah\n[01:13.12]You and me, in an empty room\n[01:16.19]They can’t get in, only room for 2\n[01:18.99]If you play your part, and I play mine too\n[01:22.06]I’ll never take my eyes off, you\n[01:25.94]Tell me all your sweet, sweet little lies\n[01:28.85]All about the dark places you hide\n[01:31.86]Tell me all your problems, make them mine\n[01:34.91]Tell me all your sweet, sweet little lies\n[01:37.92]I wonder if the sun will shine again\n[01:40.90]If I'll ever see your face again\n[01:43.90]You know I'd rather die than say goodbye\n[01:46.94]So tell me all your sweet, sweet little lies\n[01:49.90](Sweet, sweet, tell me all your sweet, sweet little lies)\n[01:53.10]Tell me all your sweet, sweet, oh no\n[01:56.38](Sweet, sweet, tell me all your sweet, sweet little lies)\n[02:02.50]I love the picture in my head\n[02:05.55]But I know that it’s not real\n[02:08.23]I live a picture in my head\n[02:11.31]Cause I like how it makes me feel\n[02:13.98]Tell me all your sweet, sweet little lies\n[02:16.86]All about the dark places you hide\n[02:19.89]Tell me all your problems, make them mine\n[02:22.90]Tell me all your sweet, sweet little lies\n[02:25.94]I wonder if the sun will shine again\n[02:28.86]If I'll ever see your face again\n[02:31.89]You know I'd rather die than say goodbye\n[02:34.88]So tell me all your sweet, sweet little lies\n[02:37.92](Sweet, sweet, tell me all your sweet, sweet little lies)\n[02:40.67]Tell me all your sweet, sweet, oh no\n[02:43.94](Sweet, sweet, tell me all your sweet, sweet little lies)\n[by:Hromyqibed]\n[00:00.63]将你那甜蜜易诱的谎言都向我说尽吧\n[00:03.49]让你掩藏的黑暗都归显于实吧\n[00:06.43]将纠引你的问题都向我诉尽 让我来分担\n[00:09.41]将你那甜蜜易诱的谎言都向我说尽吧\n[00:13.93]我脑海内时常出现一幅图景\n[00:15.92]当我浮在床上 斑斓万彩就此交织\n[00:19.59]我想确认自己是否已死去\n[00:21.98]苍白灯光在眼前闪烁 随着一身汗惊醒\n[00:25.13]正值红色警戒 美黛都已离去 正得我愿\n[00:28.97]想起从未脱口的痛楚\n[00:31.97]现已无可摆脱 已成定数\n[00:34.97]但你可知道 我只需要一个真心朋友\n[00:37.99]将你那甜蜜易诱的谎言都向我说尽吧\n[00:40.86]让你掩藏的黑暗都归显于实吧\n[00:43.85]将纠引你的问题都向我诉尽 让我来分担\n[00:46.95]将你那甜蜜易诱的谎言都向我说尽吧\n[00:49.93]我怀疑这日光会不会再次出现\n[00:52.71]若你我再次相遇\n[00:55.90]我宁可就此死去 也不愿与你分离\n[00:58.91]将你那甜蜜易诱的谎言都向我说尽吧\n[01:02.05]昨夜的臆想\n[01:02.98]聚成心灵的抚慰\n[01:04.81]我只可择命于一运\n[01:06.42]我们或许还可伪装下去\n[01:07.83]我们也可战胜一切\n[01:13.12]你我皆属空虚\n[01:16.19]他人未可闯入 只有你我二人\n[01:18.99]若你想自在独行 我亦不会挽留\n[01:22.06]但我会一直关注你\n[01:25.94]将你那甜蜜易诱的谎言都向我说尽吧\n[01:28.85]让你掩藏的黑暗都归显于实吧\n[01:31.86]将纠引你的问题都向我诉尽 让我来分担\n[01:34.91]将你那甜蜜易诱的谎言都向我说尽吧\n[01:37.92]我怀疑这日光会不会再次出现\n[01:40.90]若你我再次相遇\n[01:43.90]我宁可就此死去 也不愿与你分离\n[01:46.94]将你那甜蜜易诱的谎言都向我说尽吧\n[01:49.90]（将你那甜蜜易诱的谎言都向我说尽吧）\n[01:53.10]将你那甜蜜易诱的谎言都向我说尽吧\n[01:56.38]（将你那甜蜜易诱的谎言都向我说尽吧）\n[02:02.50]我喜欢脑海内那幅图景\n[02:05.55]但我不敢确定其实\n[02:08.23]那幅图景 时常出现在我脑海\n[02:11.31]只因我对此引来的感觉甚欢不已\n[02:13.98]将你那甜蜜易诱的谎言都向我说尽吧\n[02:16.86]将你那甜蜜易诱的谎言都向我说尽吧\n[02:19.89]将纠引你的问题都向我诉尽 让我来分担\n[02:22.90]将你那甜蜜易诱的谎言都向我说尽吧\n[02:25.94]我怀疑这日光会不会再次出现\n[02:28.86]若你我再次相遇\n[02:31.89]我宁可就此死去 也不愿与你分离\n[02:34.88]将你那甜蜜易诱的谎言都向我说尽吧\n[02:37.92]（将你那甜蜜易诱的谎言都向我说尽吧）\n[02:40.67]将你那甜蜜易诱的谎言都向我说尽吧\n[02:43.94]（将你那甜蜜易诱的谎言都向我说尽吧）\n",
+              theme: '#a6d0c2'
+            }
+          ];
+          if(JSON.parse(localStorage.getItem('info'))) {
+            
+          } else {
+            localStorage.setItem('info', JSON.stringify(auduoInfo));
+          }
+          
       loadJS('https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.js', function () {
-        const ap = new window.APlayer({
+        window.ap = new window.APlayer({
           container: document.getElementById('aplayer'),
           mini: true,
           autoplay: true,
@@ -36,43 +68,11 @@
           fixed: true,
           listFolded: false,
           listMaxHeight: 90,
-          lrcType: 3,
+          lrcType: 1,
           storageName: 'aplayer-setting',
-          audio: [
-            {
-              name: '三个人的晚餐',
-              artist: '王若琳',
-              url: 'https://music.163.com/song/media/outer/url?id=33894312.mp3',
-              cover: 'http://p4.music.126.net/wAvTphtdoH3hUpTpw5CebA==/18337654928625343.jpg',
-              lrc: 'http://47.100.39.25:3000/lyric?id=33894312',
-              theme: '#ebd0c2'
-            },
-            {
-              name: 'Winter Without You',
-              artist: 'Gloria Kim',
-              url: 'https://music.163.com/song/media/outer/url?id=1352962983.mp3',
-              cover: 'http://p4.music.126.net/egJvDzDxh8YpvsLQ31gjkg==/109951163938237058.jpg',
-              lrc: 'http://47.100.39.25:3000/lyric?id=1352962983',
-              theme: '#64d0c2'
-            },
-            {
-              name: 'Sweet but Psycho',
-              artist: 'Ava Max',
-              url: 'https://music.163.com/song/media/outer/url?id=1300528275.mp3',
-              cover: 'http://p3.music.126.net/gee-5oSaBNjcg3fhcBJdBQ==/109951163781396587.jpg',
-              lrc: 'http://47.100.39.25:3000/lyric?id=1300528275',
-              theme: '#cfd0c2'
-            },
-            {
-              name: 'Sweet Little Lies',
-              artist: '王若琳',
-              url: 'https://music.163.com/song/media/outer/url?id=1347650968.mp3',
-              cover: 'http://p3.music.126.net/lsJKDqZkQB806mGFkdmZrw==/109951163909310571.jpg',
-              lrc: 'http://47.100.39.25:3000/lyric?id=1347650968',
-              theme: '#a6d0c2'
-            }
-          ]
+          audio: JSON.parse(localStorage.getItem('info'))
         });
+        ap.notice('Hello☀', 2000, 0.8);
       });
     }
 

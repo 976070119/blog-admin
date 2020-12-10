@@ -5,6 +5,8 @@ import './setting.less';
 import { connect } from 'react-redux';
 import { updateUser } from '../../redux/actions';
 import moment from 'moment';
+import axios from 'axios';
+
 const dateFormat = 'YYYY-MM-DD';
 function Setting(props) {
 
@@ -13,7 +15,7 @@ function Setting(props) {
     //         console.log(res.data.data.visits)
     //     })
     // const data = { title: 'title', desc: 'desc', content: 'content', tags: [1,2,3] };
-    // const data = { userName: 'guest02', passWord: '123', type: 'guest' };
+    // const data = { userName: 'root', passWord: '1234', type: 'guest' };
     // axios.post('/register', data)
     // .then( res => {
     //   console.log(res.data)
